@@ -8,28 +8,19 @@ public class TwoRangesSum {
             System.out.println("number to skip is bugger then the last");
         } else if (lastInRow<0) {
             System.out.println("last number in row is negative");
-        } else if(numberToSkip == lastInRow){
+        } else {
+            int skippedSum = 0;
+            int countedSum = 0;
 
             for (int i = 1; i <= lastInRow; i++) {
-                sum += i;
+                if(i == numberToSkip){
+                    skippedSum += i;
+                }else if(numberToSkip == lastInRow || i == lastInRow){
+                    countedSum = i;
+                }
             }
-            System.out.println("skipped sum is number " + sum);
-            System.out.println("counted sum is number " + (numberToSkip - lastInRow) );
+            System.out.println("skipped sum is " + skippedSum);
+            System.out.println("counted sum is " + countedSum);
         }
-
-
-
-
-
-//        for(int i=1; i<=numberToSkip && i<lastInRow; i++) {
-//            if (numberToSkip > lastInRow) {
-//                System.out.println("number to skip is bugger then the last");
-//            } else if (lastInRow<0) {
-//                System.out.println("last number in row is negative");
-//            }else{
-//                System.out.println("skipped sum is number " + (numberToSkip + lastInRow));
-//                System.out.println("counted sum is number " + i);
-//            }
-//        }
     }
 }
